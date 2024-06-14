@@ -1,3 +1,4 @@
 ## Packages Command
 - npx create-app-next@latest
 - npm i mongoose
+- npm install zod
