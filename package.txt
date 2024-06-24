@@ -5,3 +5,4 @@
 - npm i resend
 - npm i react-email
 - npm i bcryptjs
+- npm i next-auth
