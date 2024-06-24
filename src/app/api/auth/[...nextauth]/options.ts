@@ -41,11 +41,26 @@ export const authOptions: NextAuthOptions = {
                    } else {
                     throw new Error('Incorrect Password')
                    }
-                   
+
                 } catch (err: any) {
                     throw new Error(err)
                 }
             }
         })
-    ]
+    ],
+    callbacks: {
+        async session({ session, token }) {
+            return session
+        },
+        async jwt({ token, user}) {
+            return token
+        }
+    },
+    pages: {
+        signIn: '/sign-in',
+    },
+    session: {
+        strategy: "jwt"
+    },
+    secret: process.env.NEXTAUTH_SECRET,
 }
